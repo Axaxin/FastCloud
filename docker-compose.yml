@@ -1,2 +1,62 @@
 ---
-version '2'
+version: "2"
+
+services:
+  web:
+    image: jwilder/nginx-proxy:latest
+    container_name: nginx
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      ENABLE_IPV6: 'true'
+      DHPARAM_GENERATION: 'false'
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+      - ${HOME}/fastcloud/nginx/certs:/etc/nginx/certs
+      - ${HOME}/fastcloud/nginx/conf:/etc/nginx/conf.d
+      - vhost:/etc/nginx/vhost.d
+      - html:/usr/share/nginx/html
+      - nextcloud:/var/www/html
+    networks:
+      - app
+
+  acme:
+    image: nginxproxy/acme-companion:latest
+    container_name: acme-companion
+    restart: always
+    environment:
+      DEFAULT_EMAIL: mail@youemail.xxx
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - acme:/etc/acme.sh
+    volumes_from:
+      - web
+    networks:
+      - app
+
+  nextcloud:
+    image: nextcloud:20.0.14-fpm
+    container_name: nextcloud
+    restart: always
+    environment:
+      NEXTCLOUD_TRUSTED_DOMAINS: abc.example.com
+      LETSENCRYPT_HOST: abc.example.com
+      VIRTUAL_HOST: abc.example.com
+      VIRTUAL_ROOT: /var/www/html
+      VIRTUAL_PROTO: fastcgi
+    volumes:
+      - nextcloud:/var/www/html
+    networks:
+      - app
+
+networks:
+  app:
+    driver: bridge
+
+volumes:
+  vhost:
+  html:
+  nextcloud:
+  acme:
