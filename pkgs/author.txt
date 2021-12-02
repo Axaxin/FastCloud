@@ -1,5 +1,0 @@
-
-
-      Fastcloud 安装管理脚本
-    ---authored by Axaxxin---
-    https://github.com/Axaxxin
