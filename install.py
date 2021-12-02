@@ -25,5 +25,5 @@ def menu():
             
 
 if __name__ == "__main__":
-    cmds = _Cmds
+    cmds = Cmds
     menu()

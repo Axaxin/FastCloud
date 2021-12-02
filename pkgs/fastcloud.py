@@ -4,7 +4,7 @@ import re
 
 
 # 菜单选项映射
-_Cmds = [
+Cmds = [
     'update_script',
     'checkDocker',
     'checkDNS',
