@@ -28,12 +28,10 @@ services:
     environment:
       DEFAULT_EMAIL: ${YOUR_EMAIL}
     volumes:
-      - /var/run/docker.sock:/tmp/docker.sock:ro
-      - ./nginx/certs:/etc/nginx/certs
-      - ./nginx/vhost:/etc/nginx/vhost.d
-      - ./nginx/html:/usr/share/nginx/html
       - /var/run/docker.sock:/var/run/docker.sock:ro
       - ./acme:/etc/acme.sh
+    volumes_from:
+      - web
     networks:
       - app
 
