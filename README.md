@@ -45,4 +45,4 @@ python3 install.py
 ### Caution
 - you shouldn't use this script if there are other web services already running on your host since this installation requires/occupies port 80/443
 - this installtion only suits for one user with light-weight use since it doesn't come with independent database along for massive use
-- nginx configs are stored in /FastCloud/nginx/conf and CA certificates are /FastCloud/nginx/certs, all nextclou data are under /FastCloud/nextcloud
+- nginx configs are stored in /FastCloud/nginx/conf and CA certificates are /FastCloud/nginx/certs, all nextcloud data are under /FastCloud/nextcloud
