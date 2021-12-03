@@ -32,7 +32,7 @@ unzip FastCloud.zip
 
 2. change directory into FastCloud folder and run the python3 script
 ```bash
-cd FastCloud
+cd fastcloud
 python3 install.py
 ```
 
