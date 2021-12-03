@@ -30,17 +30,19 @@ then
 unzip FastCloud.zip
 ```
 
-2. run the python3 script
+2. change directory into FastCloud folder and run the python3 script
 ```bash
+cd FastCloud
 python3 install.py
 ```
 
 3. If it's a fresh start up, it will ask to rewrite/create a new json config, you will need to provide:
 - the (sub)domain you want to use for visit your nextcloud and it's for register SSL certificate
 - your email
-- upload that you prefer(original nginx setting is limited, default of this script set to 100M)
+- upload size limitation that you prefer(original nginx setting is limited, default of this script set to 100M)
 
 
 ### Caution
 - you shouldn't use this script if there are other web services already running on your host since this installation requires/occupies port 80/443
 - this installtion only suits for one user with light-weight use since it doesn't come with independent database along for massive use
+- nginx configs are stored in /FastCloud/nginx/conf and CA certificates are /FastCloud/nginx/certs, all nextclou data are under /FastCloud/nextcloud
