@@ -27,12 +27,12 @@ wget https://github.com/Axaxin/FastCloud/releases/download/fastcloud/fastcloud.z
 then 
 
 ```
-unzip FastCloud.zip
+unzip fastcloud.zip
 ```
 
 2. change directory into FastCloud folder and run the python3 script
 ```bash
-cd fastcloud
+cd FastCloud
 python3 install.py
 ```
 
