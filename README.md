@@ -15,14 +15,25 @@ Nextcloud开源网盘+SSL全自动部署，全docker方案
 
 ### Usage
 1. Download the repo by:
-```git clone https://github.com/Axaxin/FastCloud.git```
+
+```bash
+git clone https://github.com/Axaxin/FastCloud.git
+```
 or 
-```wget https://github.com/Axaxin/FastCloud/releases/download/fastcloud/fastcloud.zip```
+
+```
+wget https://github.com/Axaxin/FastCloud/releases/download/fastcloud/fastcloud.zip
+```
 then 
-```unzip FastCloud.zip```
+
+```
+unzip FastCloud.zip
+```
 
 2. run the python3 script
-``` python3 install.py ```
+```bash
+python3 install.py
+```
 
 3. If it's a fresh start up, it will ask to rewrite/create a new json config, you will need to provide:
 - the (sub)domain you want to use for visit your nextcloud and it's for register SSL certificate
